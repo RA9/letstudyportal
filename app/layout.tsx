@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import {Facebook, HelpCircle, Home, Instagram, LifeBuoy, Mail, Plane, Radio, Search, Signal, Twitter, Users, Youtube } from "lucide-react"
+import {Facebook, HelpCircle, Home, Instagram, LifeBuoy, Mail, Plane, Radio, Search, Signal, Twitter, Users, Youtube, Menu } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import * as React from "react"
@@ -254,8 +254,9 @@ export default function RootLayout({
                   <Bell className="h-4 w-4" />
                   <span className="sr-only">Notifications</span>
                 </Button> */}
-                <Button variant="outline">Help</Button>
-                <Button variant={"blue"}>Contact</Button>
+                <Menu className="md:hidden"/>
+                <Button variant="outline" className="xs:hidden">Help</Button>
+                <Button variant={"blue"} className="xs:hidden">Contact</Button>
               </div>
             </header>
           </div>
