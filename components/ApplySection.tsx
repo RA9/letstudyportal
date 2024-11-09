@@ -14,7 +14,7 @@ function ApplySection() {
         <p className="text-gray-600">
           The Let&apos;s Study Portal simplifies your search for educational opportunities. Save time and find the best options tailored to your needs.
         </p>
-        <div className="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 pt-16">
           {/* Feature 1 */}
           <div className="space-y-2">
             <h3 className="text-lg font-semibold text-gray-800">Time Savings</h3>
@@ -27,7 +27,7 @@ function ApplySection() {
           </div>
         </div>
         {/* Buttons */}
-        <div className="flex space-x-4 mt-4">
+        <div className="flex space-x-4 pt-8">
           <button className="bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-800">
             Learn More
           </button>

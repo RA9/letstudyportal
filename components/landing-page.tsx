@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import EducationalGoalsSection from "./EducationGoalSection"
 import EducationalJourneySteps from "./EducationalJourney"
 import ApplySection from "./ApplySection"
+import ApplyVerifiedPartnersSection from "./ApplyVerifiedPartners"
 
  
 
@@ -46,22 +47,25 @@ export function LandingPageComponent() {
 
           <ApplySection />
 
+
+          <ApplyVerifiedPartnersSection />
+
           <section className="w-full py-12 md:py-24 bg-white">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center space-y-4 text-center">
                 <h2 className="text-3xl font-bold tracking-tighter text-[#00137B] sm:text-4xl md:text-5xl">
                   Stay Updated with Our Newsletter
                 </h2>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl py-6">
                   Subscribe now for the latest updates and insights on educational opportunities and resources.
                 </p>
-                <div className="w-full max-w-sm space-y-2">
+                <div className="w-full max-w-sm space-y-2 py-8 md:py-12">
                   <Input
                     type="email"
                     placeholder="Your Email Here"
                     className="w-full"
                   />
-                  <Button className="w-full bg-[#4A72FF]">Join Us</Button>
+                  <Button variant={"blue"} className="w-full">Join Us</Button>
                   <p className="text-xs text-gray-500">
                     By clicking Join Us, you agree to our Terms and Conditions.
                   </p>

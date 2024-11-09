@@ -7,7 +7,7 @@ function EducationalGoalsSection() {
   return (
     <div className="flex bg-gray-50 flex-col md:flex-row items-center py-16 md:py-24 px-8">
       {/* Text Section */}
-      <div className="md:w-2/3 p-4 space-y-4">
+      <div className="md:w-2/3 p-4 space-y-4 py-8">
         <h1 className="text-3xl md:text-4xl font-bold text-blue-800">
           Explore Top Learning Institutions and Programs Tailored to Your Educational Goals
         </h1>
@@ -16,7 +16,7 @@ function EducationalGoalsSection() {
         </p>
         
         {/* Feature List */}
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 pt-16">
           {/* Tailored Choices */}
           <div className="flex flex-col items-start space-x-3 p-4">
             <div className="text-blue-600 text-3xl py-2 px-4">📌</div>

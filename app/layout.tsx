@@ -44,7 +44,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col min-h-screen">
           <div className="border-b">
-            <header className="container flex h-16 items-center justify-between px-4">
+            <header className="container flex h-24 items-center justify-between px-4">
               <div className="flex items-center gap-4">
                 <Link href="/" className="font-semibold">
                   <Image alt="Letstudyportal logo" src={"/nlogo.svg"} width={200} height={100} />

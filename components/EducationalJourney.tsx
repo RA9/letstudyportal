@@ -6,7 +6,7 @@ function EducationalJourneySteps() {
   return (
     <div className="px-8 py-16 md:py-24 text-center">
       {/* Header Section */}
-      <div className="space-y-4">
+      <div className="space-y-4 py-8">
         <h2 className="text-lg font-semibold text-gray-700">Explore</h2>
         <h1 className="text-3xl md:text-4xl font-bold text-blue-800">
           Unlock Your Educational Journey with Ease
@@ -17,7 +17,7 @@ function EducationalJourneySteps() {
       </div>
 
       {/* Steps Section */}
-      <div className="flex flex-col md:flex-row justify-center mt-8 space-y-8 md:space-y-0 md:space-x-8">
+      <div className="flex flex-col md:flex-row justify-center mt-8 space-y-8 md:space-y-0 md:space-x-8 py-8">
         {/* Step 1 */}
         <div className="flex flex-col items-center space-y-4">
           <div className="text-blue-500 text-4xl">🔍</div>
