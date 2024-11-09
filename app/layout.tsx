@@ -239,7 +239,7 @@ export default function RootLayout({
                               <Button variant="outline" size="sm" asChild>
                                 <Link href="#">Sign up for free</Link>
                               </Button>
-                              <Button size="sm" asChild>
+                              <Button variant={"blue"} size="sm" asChild>
                                 <Link href="#">Login</Link>
                               </Button>
                             </div>
@@ -256,7 +256,7 @@ export default function RootLayout({
                   <span className="sr-only">Notifications</span>
                 </Button> */}
                 <Button variant="outline">Help</Button>
-                <Button>Contact</Button>
+                <Button variant={"blue"}>Contact</Button>
               </div>
             </header>
           </div>
@@ -314,7 +314,7 @@ export default function RootLayout({
                       placeholder="Your Email Here"
                       className="w-full"
                     />
-                    <Button className="w-full">Join</Button>
+                    <Button variant={"blue"} className="w-full">Join</Button>
                     <p className="text-xs text-gray-500">
                       By joining, you consent to our Privacy Policy and receive updates.
                     </p>

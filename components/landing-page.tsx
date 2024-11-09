@@ -42,7 +42,7 @@ export function LandingPageComponent() {
                   </p>
                 </div>
                 <div className="space-x-4">
-                  <Button size="lg" className="bg-white text-black hover:bg-gray-100">Get Started</Button>
+                  <Button size="lg" className="bg-blue-700 text-white hover:bg-blue-700/90">Get Started</Button>
                   <Button size="lg" variant="outline" className="bg-default text-white border-white hover:bg-white/20">
                     Learn More
                   </Button>
