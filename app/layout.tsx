@@ -48,7 +48,7 @@ export default function RootLayout({
             <header className="container flex h-16 items-center justify-between px-4">
               <div className="flex items-center gap-4">
                 <Link href="/" className="font-semibold">
-                  <Image alt="Letstudyportal logo" src={"/logo.svg"} width={200} height={100} />
+                  <Image alt="Letstudyportal logo" src={"/nlogo.svg"} width={200} height={100} />
                 </Link>
                 <NavigationMenu>
                   <NavigationMenuList>
@@ -251,11 +251,12 @@ export default function RootLayout({
                 </NavigationMenu>
               </div>
               <div className="flex items-center gap-4">
-                <Button variant="ghost" size="icon">
+                {/* <Button variant="ghost" size="icon">
                   <Bell className="h-4 w-4" />
                   <span className="sr-only">Notifications</span>
-                </Button>
-                <Button>Join Now</Button>
+                </Button> */}
+                <Button variant="outline">Help</Button>
+                <Button>Contact</Button>
               </div>
             </header>
           </div>
@@ -270,7 +271,7 @@ export default function RootLayout({
                 <div className="md:col-span-1">
                   <Link href="/" className="flex items-center space-x-2">
                     <Image
-                      src="/logo.svg"
+                      src="/nlogo.svg"
                       alt="Let's Study Logo"
                       width={200}
                       height={100}

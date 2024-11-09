@@ -15,6 +15,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import EducationalGoalsSection from "./EducationGoalSection"
+import EducationalJourneySteps from "./EducationalJourney"
+import ApplySection from "./ApplySection"
 
  
 
@@ -40,13 +43,19 @@ export function LandingPageComponent() {
                 </div>
                 <div className="space-x-4">
                   <Button size="lg" className="bg-white text-black hover:bg-gray-100">Get Started</Button>
-                  <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/20">
+                  <Button size="lg" variant="outline" className="bg-default text-white border-white hover:bg-white/20">
                     Learn More
                   </Button>
                 </div>
               </div>
             </div>
           </section>
+
+          <EducationalGoalsSection />
+
+          <EducationalJourneySteps />
+
+          <ApplySection />
 
           <section className="w-full py-12 md:py-24 bg-white">
             <div className="container px-4 md:px-6">
