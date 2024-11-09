@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Bell, Facebook, HelpCircle, Home, Instagram, LifeBuoy, Mail, Plane, Radio, Search, Signal, Twitter, Users, Youtube } from "lucide-react"
+import {Facebook, HelpCircle, Home, Instagram, LifeBuoy, Mail, Plane, Radio, Search, Signal, Twitter, Users, Youtube } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import * as React from "react"
@@ -12,7 +12,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
@@ -324,7 +323,7 @@ export default function RootLayout({
               <div className="mt-8 border-t pt-8">
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                   <p className="text-sm text-gray-500">
-                    © 2024 Let's Study Portal. All rights reserved.
+                    © 2024 Let&apos;s Study Portal. All rights reserved.
                   </p>
                   <div className="flex gap-4">
                     <Link href="#" className="text-gray-500 hover:text-gray-900">

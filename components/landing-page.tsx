@@ -1,20 +1,9 @@
 'use client'
 
-import { Bell, Facebook, HelpCircle, Home, Instagram, LifeBuoy, Mail, Plane, Radio, Search, Signal, Twitter, Users, Youtube } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
 import * as React from "react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
 import EducationalGoalsSection from "./EducationGoalSection"
 import EducationalJourneySteps from "./EducationalJourney"
 import ApplySection from "./ApplySection"

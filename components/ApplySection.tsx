@@ -12,7 +12,7 @@ function ApplySection() {
           Apply Directly to Verified Partnered Schools for a Seamless Experience
         </h1>
         <p className="text-gray-600">
-          The Let's Study Portal simplifies your search for educational opportunities. Save time and find the best options tailored to your needs.
+          The Let&apos;s Study Portal simplifies your search for educational opportunities. Save time and find the best options tailored to your needs.
         </p>
         <div className="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
           {/* Feature 1 */}

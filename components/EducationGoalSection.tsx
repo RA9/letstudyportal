@@ -12,7 +12,7 @@ function EducationalGoalsSection() {
           Explore Top Learning Institutions and Programs Tailored to Your Educational Goals
         </h1>
         <p className="text-gray-700 text-lg">
-          At Let's Study Portal, we simplify your search for the ideal schools and programs. Our platform connects you with institutions that align perfectly with your academic and personal aspirations.
+          At Let&apos;s Study Portal, we simplify your search for the ideal schools and programs. Our platform connects you with institutions that align perfectly with your academic and personal aspirations.
         </p>
         
         {/* Feature List */}
