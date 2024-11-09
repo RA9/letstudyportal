@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 const ApplyVerifiedPartnersSection = () => {
   return (
@@ -8,7 +9,7 @@ const ApplyVerifiedPartnersSection = () => {
       {/* Left Text Section */}
       <div className="md:w-1/2 space-y-4 text-center md:text-left">
         <h4 className="text-sm font-semibold text-gray-700 uppercase">Explore</h4>
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-800">
+        <h1 className="text-xl md:text-4xl font-bold text-blue-800">
           Start Your Application Journey
         </h1>
         <p className="text-gray-600">
@@ -16,12 +17,12 @@ const ApplyVerifiedPartnersSection = () => {
         </p>
 
         <div className="flex gap-4 mt-8">
-          <button className="px-6 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition">
+          <Button variant={"blue"}>
             Get Started
-          </button>
-          <button className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition">
+          </Button>
+          <Button variant={"ghost"}>
             Learn More
-          </button>
+          </Button>
         </div>
       </div>
 

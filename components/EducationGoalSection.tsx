@@ -8,10 +8,10 @@ function EducationalGoalsSection() {
     <div className="flex bg-gray-50 flex-col md:flex-row items-center py-16 md:py-24 px-8">
       {/* Text Section */}
       <div className="md:w-2/3 p-4 space-y-4 py-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-blue-800">
+        <h1 className="text-xl md:text-4xl font-bold text-blue-800">
           Explore Top Learning Institutions and Programs Tailored to Your Educational Goals
         </h1>
-        <p className="text-gray-700 text-lg">
+        <p className="text-gray-700 md:text-lg">
           At Let&apos;s Study Portal, we simplify your search for the ideal schools and programs. Our platform connects you with institutions that align perfectly with your academic and personal aspirations.
         </p>
         
@@ -38,7 +38,7 @@ function EducationalGoalsSection() {
       </div>
       
       {/* Image Section */}
-      <div className="p-4">
+      <div className="hidden md:block p-4">
         <Image
           src="/pp.png" // Replace this with your image URL
           width={800}

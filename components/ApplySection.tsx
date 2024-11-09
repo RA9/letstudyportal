@@ -2,13 +2,14 @@
 
 import Image from 'next/image';
 import React from 'react';
+import { Button } from './ui/button';
 
 function ApplySection() {
   return (
     <div className="bg-gray-50 p-8 md:p-16 flex flex-col md:flex-row rounded-lg shadow-lg items-center space-y-8 md:space-y-0 md:space-x-8">
       {/* Text Content */}
       <div className="flex-1 space-y-4 text-center md:text-left">
-        <h1 className="text-2xl md:text-4xl font-bold text-blue-800">
+        <h1 className="text-xl md:text-4xl font-bold text-blue-800">
           Apply Directly to Verified Partnered Schools for a Seamless Experience
         </h1>
         <p className="text-gray-600">
@@ -28,13 +29,13 @@ function ApplySection() {
         </div>
         {/* Buttons */}
         <div className="flex space-x-4 pt-8">
-          <button className="bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-800">
+          <Button variant={"blue"}>
             Learn More
-          </button>
-          <button className="text-blue-700 font-semibold flex items-center space-x-1">
+          </Button>
+          <Button variant={"outline"} className='text-blue-800'>
             <span>Sign Up</span>
             <span>➔</span>
-          </button>
+          </Button>
         </div>
       </div>
 
