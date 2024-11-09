@@ -4,11 +4,11 @@ import React from 'react';
 
 function EducationalJourneySteps() {
   return (
-    <div className="p-8 text-center">
+    <div className="px-8 py-16 md:py-24 text-center">
       {/* Header Section */}
-      <div className="space-y-2">
+      <div className="space-y-4">
         <h2 className="text-lg font-semibold text-gray-700">Explore</h2>
-        <h1 className="text-2xl md:text-3xl font-bold text-blue-800">
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-800">
           Unlock Your Educational Journey with Ease
         </h1>
         <p className="text-gray-600">
