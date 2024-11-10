@@ -7,6 +7,8 @@ import {Facebook, HelpCircle, Home, Instagram, LifeBuoy, Mail, Plane, Radio, Sea
 import Image from "next/image"
 import Link from "next/link"
 import * as React from "react"
+import 'mapbox-gl/dist/mapbox-gl.css'
+
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
