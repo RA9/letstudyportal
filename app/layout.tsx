@@ -55,7 +55,7 @@ export default function RootLayout({
             <header className="container flex h-16 md:h-24 items-center justify-between px-4">
               <div className="flex items-center gap-4">
                 <Link href="/" className="font-semibold">
-                  <Image alt="Letstudyportal logo" className="h-24 w-24 md:w-full md:h-auto" src={"/nlogo.svg"} width={200} height={100} />
+                  <Image alt="Letstudyportal logo" className="h-24 w-24 md:w-48 md:h-48" src={"/nlogo.svg"} width={200} height={100} />
                 </Link>
                 <NavigationMenu className={"hidden md:block"}>
                   <NavigationMenuList>
