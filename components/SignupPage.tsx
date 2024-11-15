@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function SignupPageComponent() {
   const [formData, setFormData] = useState({
@@ -27,14 +28,16 @@ export default function SignupPageComponent() {
   return (
     <div className="min-h-screen grid md:grid-cols-2 bg-blue-400">
       <div className="hidden md:block">
-        <img
+        <Image
           alt="Student studying"
+          width={400}
+          height={400}
           className="h-full w-full object-cover"
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-A1UafkBc3jUMJCRjR9yoTla5vdc5SF.png"
+          src="/login-pic.jpg"
         />
       </div>
-      <div className="p-8 bg-white rounded-l-3xl">
-        <div className="max-w-md mx-auto space-y-6">
+      <div className="p-8 bg-white">
+        <div className="max-w-4xl mx-auto space-y-6">
           <div className="flex items-center gap-2">
             <div className="size-8 rounded-full bg-blue-600" />
             <span className="text-xl font-semibold">Let's Study</span>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function LoginPageComponent() {
   const [showPassword, setShowPassword] = useState(false)
@@ -97,7 +98,13 @@ export default function LoginPageComponent() {
       </div>
       <div className="hidden md:block bg-gray-200">
         <div className="h-full flex items-center justify-center">
-          <div className="size-32 bg-gray-300 rounded" />
+          <Image
+                src="/login-pic2.jpg"
+                alt="Logo Image"
+                width={400}
+                height={400}
+                className="h-full w-full object-cover"
+           />
         </div>
       </div>
     </div>
