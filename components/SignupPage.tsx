@@ -38,11 +38,10 @@ export default function SignupPageComponent() {
       </div>
       <div className="p-8 bg-white">
         <div className="max-w-4xl mx-auto space-y-6">
-          <div className="flex items-center gap-2">
-            <div className="size-8 rounded-full bg-blue-600" />
-            <span className="text-xl font-semibold">Let's Study</span>
-          </div>
-          
+          <Link href="/" className="font-semibold">
+            <Image alt="Letstudyportal logo" src={"/nlogo.svg"} width={150} height={150} />
+          </Link>
+
           <div>
             <h1 className="text-2xl font-semibold mb-1">
               <span className="text-blue-600">Create</span> an account
@@ -51,7 +50,7 @@ export default function SignupPageComponent() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First name</Label>
                 <Input
