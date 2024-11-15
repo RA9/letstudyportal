@@ -8,6 +8,7 @@ import EducationalGoalsSection from "./EducationGoalSection"
 import EducationalJourneySteps from "./EducationalJourney"
 import ApplySection from "./ApplySection"
 import ApplyVerifiedPartnersSection from "./ApplyVerifiedPartners"
+import Link from "next/link"
 
  
 
@@ -32,7 +33,9 @@ export function LandingPageComponent() {
                   </p>
                 </div>
                 <div className="space-x-2 md:space-x-4">
-                  <Button size="lg" className="bg-blue-700 text-white hover:bg-blue-700/90">Get Started</Button>
+                  <Button size="lg" className="bg-blue-700 text-white hover:bg-blue-700/90">
+                   <Link href="/register">Get Started</Link>
+                  </Button>
                   <Button size="lg" variant="outline" className="bg-default text-white border-white hover:bg-white/20">
                     Learn More
                   </Button>

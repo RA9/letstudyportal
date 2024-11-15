@@ -246,10 +246,10 @@ export default function RootLayout({
                             <p className="text-sm">Ready to study abroad?</p>
                             <div className="space-x-2">
                               <Button variant="outline" size="sm" asChild>
-                                <Link href="#">Sign up for free</Link>
+                                <Link href="/register">Sign up for free</Link>
                               </Button>
                               <Button variant={"blue"} size="sm" asChild>
-                                <Link href="#">Login</Link>
+                                <Link href="/login">Login</Link>
                               </Button>
                             </div>
                           </div>
