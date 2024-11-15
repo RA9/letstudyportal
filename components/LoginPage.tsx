@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 
-export default function Component() {
+export default function LoginPageComponent() {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
@@ -89,7 +89,7 @@ export default function Component() {
           </form>
           <p className="mt-6 text-center text-sm text-gray-600">
             Yet to join Let's Study?{" "}
-            <Link href="#" className="text-blue-600 hover:text-blue-700">
+            <Link href="/register" className="text-blue-600 hover:text-blue-700">
               Sign Up
             </Link>
           </p>
