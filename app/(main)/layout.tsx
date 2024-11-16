@@ -516,10 +516,10 @@ export default function RootLayout({
                     © 2024 Let&apos;s Study Portal. All rights reserved.
                   </p>
                   <div className="flex gap-4">
-                    <Link href="#" className="text-gray-500 hover:text-gray-900">
+                    <Link href="/privacy" className="text-gray-500 hover:text-gray-900">
                       Privacy Policy
                     </Link>
-                    <Link href="#" className="text-gray-500 hover:text-gray-900">
+                    <Link href="/terms" className="text-gray-500 hover:text-gray-900">
                       Terms of Use
                     </Link>
                     <Link href="#" className="text-gray-500 hover:text-gray-900">
