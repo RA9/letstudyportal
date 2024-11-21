@@ -19,70 +19,72 @@ const geistMono = localFont({
 
 
 export default function Layout({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) {
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
 
-    return (
-      <html lang="en">
+  return (
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex min-h-screen bg-gray-50/50">
-      {/* Sidebar */}
-      <aside className="flex w-64 flex-col bg-blue-500 p-4 text-white">
-        <div className="mb-8 flex items-center gap-2 text-xl font-bold">
-          <div className="rounded-full bg-white p-2">
-            <div className="h-6 w-6 text-blue-500">LS</div>
-          </div>
-          Let&apos;s Study
+          {/* Sidebar */}
+          <aside className="flex w-64 flex-col bg-blue-500 p-4 text-white">
+            <div className="mb-8 flex items-center gap-2 text-xl font-bold">
+              <div className="rounded-full bg-white p-2">
+                <div className="h-6 w-6 text-blue-500">LS</div>
+              </div>
+              Let&apos;s Study
+            </div>
+
+            <nav className="flex flex-1 flex-col gap-2">
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <Home className="mr-2 h-4 w-4" />
+                Dashboard
+              </Button>
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <BookOpen className="mr-2 h-4 w-4" />
+                Saved Schools
+              </Button>
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <Calendar className="mr-2 h-4 w-4" />
+                Applications
+              </Button>
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <LifeBuoy className="mr-2 h-4 w-4" />
+                Student Support
+              </Button>
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <Plane className="mr-2 h-4 w-4" />
+                Visa Assistance
+              </Button>
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <Home className="mr-2 h-4 w-4" />
+                Accommodation
+              </Button>
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <BookOpen className="mr-2 h-4 w-4" />
+                Resources
+              </Button>
+              <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+                <MessageSquare className="mr-2 h-4 w-4" />
+                Support Chat
+              </Button>
+            </nav>
+
+            <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </Button>
+          </aside>
+          {/* Main Content */}
+          <main className="flex-1 p-4">
+            {children}
+          </main>
         </div>
-        
-        <nav className="flex flex-1 flex-col gap-2">
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <Home className="mr-2 h-4 w-4" />
-            Dashboard
-          </Button>
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <BookOpen className="mr-2 h-4 w-4" />
-            Saved Schools
-          </Button>
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <Calendar className="mr-2 h-4 w-4" />
-            Applications
-          </Button>
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <LifeBuoy className="mr-2 h-4 w-4" />
-            Student Support
-          </Button>
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <Plane className="mr-2 h-4 w-4" />
-            Visa Assistance
-          </Button>
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <Home className="mr-2 h-4 w-4" />
-            Accommodation
-          </Button>
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <BookOpen className="mr-2 h-4 w-4" />
-            Resources
-          </Button>
-          <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-            <MessageSquare className="mr-2 h-4 w-4" />
-            Support Chat
-          </Button>
-        </nav>
-
-        <Button variant="ghost" className="justify-start text-white hover:bg-blue-600">
-          <LogOut className="mr-2 h-4 w-4" />
-          Logout
-        </Button>
-      </aside>
-        {children}
-    </div>
-
-       </body>
-       </html>
-    )
-  }
+      </body>
+    </html>
+  )
+}
