@@ -44,16 +44,16 @@ export function DashboardPageComponent() {
 
       <Card className="mb-8">
         <CardContent className="p-6">
-          <h1 className="text-2xl font-bold">Welcome back, Samuel Monday</h1>
+          <h1 className="text-2xl font-bold">Welcome back, Samuel Monday!</h1>
           <p className="text-gray-500">Studying a day makes you smarter.</p>
         </CardContent>
       </Card>
 
-      <div className="mb-8 grid gap-6 md:grid-cols-2">
+      <div className="mb-8 flex flex-col gap-6 ">
         <Card>
           <CardContent className="p-6">
             <h2 className="mb-4 text-lg font-semibold">Application Progress</h2>
-            <ChartContainer className="h-[200px]" config={{ /* your config here */ }}>
+            <ChartContainer className="h-[200px] w-full" config={{ /* your config here */ }}>
               <LineChart data={activityData}>
                 <Line
                   type="monotone"
@@ -75,7 +75,7 @@ export function DashboardPageComponent() {
         <Card>
           <CardContent className="p-6">
             <h2 className="mb-4 text-lg font-semibold">Weekly Tasks Completed</h2>
-            <ChartContainer className="h-[200px]" config={{}}>
+            <ChartContainer className="h-[200px] w-full" config={{}}>
               <BarChart data={progressData}>
                 <Bar dataKey="tasks" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
                 <ChartTooltip />
