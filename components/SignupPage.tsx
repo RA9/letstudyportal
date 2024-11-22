@@ -7,23 +7,18 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import Image from "next/image"
+import { AlertCircle } from "lucide-react"
+import { useFormState, useFormStatus } from 'react-dom'
+import { register } from '@/app/actions/auth'
+
+const initialState = {
+  errors: {},
+  message: null,
+}
 
 export default function SignupPageComponent() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    emailPhone: "",
-    dob: "",
-    password: "",
-    confirmPassword: "",
-    terms: false,
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log(formData)
-  }
+  const [state, formAction] = useFormState(register, initialState)
+  const [terms, setTerms] = useState(false)
 
   return (
     <div className="min-h-screen grid md:grid-cols-2 bg-blue-400">
@@ -49,43 +44,79 @@ export default function SignupPageComponent() {
             <p className="text-sm text-gray-500">Study smart, finish smooth</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form action={formAction} className="space-y-4">
+            {state?.message && (
+              <div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+                {state.message}
+              </div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First name</Label>
                 <Input
                   id="firstName"
-                  required
-                  value={formData.firstName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, firstName: e.target.value })
-                  }
+                  name="firstname"
+                  placeholder="Enter your first name"
+                  className={state?.errors?.firstname ? "border-red-500" : ""}
                 />
+                {state?.errors?.firstname && (
+                  <div className="flex items-center space-x-1 text-sm text-red-500">
+                    <AlertCircle className="h-4 w-4" />
+                    <p>{state.errors.firstname}</p>
+                  </div>
+                )}
               </div>
+
               <div className="space-y-2">
                 <Label htmlFor="lastName">Last name</Label>
                 <Input
                   id="lastName"
-                  required
-                  value={formData.lastName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, lastName: e.target.value })
-                  }
+                  name="lastname"
+                  placeholder="Enter your last name"
+                  className={state?.errors?.lastname ? "border-red-500" : ""}
                 />
+                {state?.errors?.lastname && (
+                  <div className="flex items-center space-x-1 text-sm text-red-500">
+                    <AlertCircle className="h-4 w-4" />
+                    <p>{state.errors.lastname}</p>
+                  </div>
+                )}
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="emailPhone">Email or phone number</Label>
+              <Label htmlFor="email">Email</Label>
               <Input
-                id="emailPhone"
-                type="text"
-                required
-                value={formData.emailPhone}
-                onChange={(e) =>
-                  setFormData({ ...formData, emailPhone: e.target.value })
-                }
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                className={state?.errors?.email ? "border-red-500" : ""}
               />
+              {state?.errors?.email && (
+                <div className="flex items-center space-x-1 text-sm text-red-500">
+                  <AlertCircle className="h-4 w-4" />
+                  <p>{state.errors.email}</p>
+                </div>
+              )}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone number</Label>
+              <Input
+                id="phone"
+                type="tel"
+                name="phoneNumber"
+                placeholder="Enter your phone number"
+                className={state?.errors?.phoneNumber ? "border-red-500" : ""}
+              />
+              {state?.errors?.phoneNumber && (
+                <div className="flex items-center space-x-1 text-sm text-red-500">
+                  <AlertCircle className="h-4 w-4" />
+                  <p>{state.errors.phoneNumber}</p>
+                </div>
+              )}
             </div>
 
             <div className="space-y-2">
@@ -93,10 +124,16 @@ export default function SignupPageComponent() {
               <Input
                 id="dob"
                 type="date"
-                required
-                value={formData.dob}
-                onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
+                name="dateOfBirth"
+                placeholder="Enter your date of birth"
+                className={state?.errors?.dateOfBirth ? "border-red-500" : ""}
               />
+              {state?.errors?.dateOfBirth && (
+                <div className="flex items-center space-x-1 text-sm text-red-500">
+                  <AlertCircle className="h-4 w-4" />
+                  <p>{state.errors.dateOfBirth}</p>
+                </div>
+              )}
             </div>
 
             <div className="space-y-2">
@@ -104,12 +141,24 @@ export default function SignupPageComponent() {
               <Input
                 id="password"
                 type="password"
-                required
-                value={formData.password}
-                onChange={(e) =>
-                  setFormData({ ...formData, password: e.target.value })
-                }
+                name="password"
+                placeholder="Enter your password"
+                className={state?.errors?.password ? "border-red-500" : ""}
               />
+              {state?.errors?.password && (
+                <div className="space-x-1 text-sm text-red-500">
+                  <div className="flex items-center space-x-1">
+                    <AlertCircle className="h-4 w-4" />
+                    <p>Password must:</p>
+                  </div>
+                  <ul>
+                    {state.errors.password.map((error: string) => (
+                      <li key={error}>- {error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
             </div>
 
             <div className="space-y-2">
@@ -117,12 +166,23 @@ export default function SignupPageComponent() {
               <Input
                 id="confirmPassword"
                 type="password"
-                required
-                value={formData.confirmPassword}
-                onChange={(e) =>
-                  setFormData({ ...formData, confirmPassword: e.target.value })
-                }
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                className={state?.errors?.confirmPassword ? "border-red-500" : ""}
               />
+              {state?.errors?.confirmPassword && (
+                <div className="space-x-1 text-sm text-red-500">
+                  <div className="flex items-center space-x-1">
+                    <AlertCircle className="h-4 w-4" />
+                    <p>Password must:</p>
+                  </div>
+                  <ul>
+                    {state.errors.confirmPassword.map((error: string) => (
+                      <li key={error}>- {error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <Link
                 href="#"
                 className="block text-right text-sm text-blue-600 hover:text-blue-700"
@@ -134,10 +194,9 @@ export default function SignupPageComponent() {
             <div className="flex items-center space-x-2">
               <Checkbox
                 id="terms"
-                checked={formData.terms}
-                onChange={(e) =>
-                  setFormData({ ...formData, terms: e.target.checked as boolean })
-                }
+                name="terms"
+                checked={terms}
+                onChange={(checked) => setTerms(checked as any)}
               />
               <label
                 htmlFor="terms"
@@ -154,9 +213,14 @@ export default function SignupPageComponent() {
               </label>
             </div>
 
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-              Create account
-            </Button>
+            {state?.errors?.terms && (
+              <div className="flex items-center space-x-1 text-sm text-red-500">
+                <AlertCircle className="h-4 w-4" />
+                <p>{state.errors.terms}</p>
+              </div>
+            )}
+
+            <SubmitButton />
 
             <Button
               type="button"
@@ -201,5 +265,15 @@ export default function SignupPageComponent() {
         </div>
       </div>
     </div>
+  )
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus()
+
+  return (
+    <Button className="w-full bg-blue-600 hover:bg-blue-700" disabled={pending} type="submit">
+      {pending ? "Loading..." : "Create account"}
+    </Button>
   )
 }
