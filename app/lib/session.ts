@@ -16,4 +16,12 @@ export async function createSession(token: string) {
             path: '/',
         }
     )
+
+    return null
 }
+
+
+export async function deleteSession() {
+    const cookieStore = cookies()
+    cookieStore.delete('session')
+  }

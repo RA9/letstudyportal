@@ -1,7 +1,7 @@
 "use server"
 
 import { SignupFormSchema, FormState } from '@/lib/definitions'
-import { createSession } from '@/app/lib/session'
+import { createSession, deleteSession } from '@/app/lib/session'
 import { redirect } from 'next/navigation'
 
 export async function register(prevState: any, formData: FormData) {
@@ -24,8 +24,6 @@ export async function register(prevState: any, formData: FormData) {
         message: 'Missing Fields. Failed to Register.',
       }
     }
-
-    console.log({ temp: validatedFields.data} )
 
     const {confirmPassword, ...rest} = validatedFields.data;
 
@@ -61,4 +59,9 @@ export async function register(prevState: any, formData: FormData) {
 
 export async function login(prevState: any, formData: FormData) {
   // Implement login logic here
+}
+
+export async function logout() {
+  deleteSession()
+  redirect('/login')
 }
