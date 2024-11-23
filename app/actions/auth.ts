@@ -1,5 +1,7 @@
+"use server"
+
 import { SignupFormSchema, FormState } from '@/lib/definitions'
-import { createSession } from '@/lib/session'
+import { createSession } from '@/app/lib/session'
 import { redirect } from 'next/navigation'
 
 export async function register(prevState: any, formData: FormData) {
@@ -47,7 +49,7 @@ export async function register(prevState: any, formData: FormData) {
 
     console.log({result})
 
-    await createSession(result)
+    await createSession(result.token)
 
     redirect('/dashboard')
   } catch (error) {
