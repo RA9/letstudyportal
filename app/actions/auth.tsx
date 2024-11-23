@@ -3,13 +3,14 @@ import { SignupFormSchema, FormState } from '@/lib/definitions'
 export async function register(prevState: any, formData: FormData) {
   try {
     const validatedFields = SignupFormSchema.safeParse({
-      firstname: formData.get('firstname'),
-      lastname: formData.get('lastname'),
+      firstName: formData.get('firstname'),
+      lastName: formData.get('lastname'),
       email: formData.get('email'),
       password: formData.get('password'),
       confirmPassword: formData.get('confirmPassword'),
       phoneNumber: formData.get('phoneNumber'),
       dateOfBirth: formData.get('dateOfBirth') ? new Date(String(formData.get('dateOfBirth'))) : undefined,
+      countryOfResidence: formData.get('countryOfResidence') || null
     })
 
     // If form validation fails, return errors early
@@ -20,7 +21,7 @@ export async function register(prevState: any, formData: FormData) {
       }
     }
 
-    console.log(validatedFields.data)
+    console.log({ temp: validatedFields.data} )
 
     // If the form is valid, send a POST request to the API
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {

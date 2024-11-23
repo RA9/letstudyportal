@@ -37,6 +37,7 @@ export const SignupFormSchema = z.object({
         return age >= 18;
     }, { message: 'You must be at least 18 years old.' }),
 
+    countryOfResidence: z.string().min(3, { message: 'Be at least 8 characters long' })
 }).refine(data => data.password === data.confirmPassword, {
     message: 'Passwords do not match.',
     path: ["confirm_password"],
@@ -53,6 +54,7 @@ export type FormState =
             password?: string[];
             confirmPassword?: string[];
             terms?: string;
+            countryOfResidence?: string;
         }
         message?: string
     }
