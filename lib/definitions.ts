@@ -1,11 +1,11 @@
 import { date, z } from 'zod'
 
 export const SignupFormSchema = z.object({
-    firstname: z
+    firstName: z
         .string()
         .min(2, { message: 'First name must be at least 2 characters long.' })
         .trim(),
-    lastname: z
+    lastName: z
         .string()
         .min(2, { message: 'Last name must be at least 2 characters long.' })
         .trim(),

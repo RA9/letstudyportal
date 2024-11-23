@@ -3,8 +3,8 @@ import { SignupFormSchema, FormState } from '@/lib/definitions'
 export async function register(prevState: any, formData: FormData) {
   try {
     const validatedFields = SignupFormSchema.safeParse({
-      firstName: formData.get('firstname'),
-      lastName: formData.get('lastname'),
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
       email: formData.get('email'),
       password: formData.get('password'),
       confirmPassword: formData.get('confirmPassword'),
@@ -23,13 +23,15 @@ export async function register(prevState: any, formData: FormData) {
 
     console.log({ temp: validatedFields.data} )
 
+    const {confirmPassword, ...rest} = validatedFields.data;
+
     // If the form is valid, send a POST request to the API
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(validatedFields.data),
+      body: JSON.stringify(rest),
     })
 
     const result = await response.json()

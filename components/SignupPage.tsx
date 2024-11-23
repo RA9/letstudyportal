@@ -56,14 +56,14 @@ export default function SignupPageComponent() {
                 <Label htmlFor="firstName">First name</Label>
                 <Input
                   id="firstName"
-                  name="firstname"
+                  name="firstName"
                   placeholder="Enter your first name"
-                  className={state?.errors?.firstname ? "border-red-500" : ""}
+                  className={state?.errors?.firstName ? "border-red-500" : ""}
                 />
-                {state?.errors?.firstname && (
+                {state?.errors?.firstName && (
                   <div className="flex items-center space-x-1 text-sm text-red-500">
                     <AlertCircle className="h-4 w-4" />
-                    <p>{state.errors.firstname}</p>
+                    <p>{state.errors.firstName}</p>
                   </div>
                 )}
               </div>
@@ -72,14 +72,14 @@ export default function SignupPageComponent() {
                 <Label htmlFor="lastName">Last name</Label>
                 <Input
                   id="lastName"
-                  name="lastname"
+                  name="lastName"
                   placeholder="Enter your last name"
-                  className={state?.errors?.lastname ? "border-red-500" : ""}
+                  className={state?.errors?.lastName ? "border-red-500" : ""}
                 />
-                {state?.errors?.lastname && (
+                {state?.errors?.lastName && (
                   <div className="flex items-center space-x-1 text-sm text-red-500">
                     <AlertCircle className="h-4 w-4" />
-                    <p>{state.errors.lastname}</p>
+                    <p>{state.errors.lastName}</p>
                   </div>
                 )}
               </div>
@@ -99,6 +99,30 @@ export default function SignupPageComponent() {
                   <AlertCircle className="h-4 w-4" />
                   <p>{state.errors.email}</p>
                 </div>
+              )}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="country">Country</Label>
+              <select
+              id="country"
+              name="countryOfResidence"
+              className={`w-full p-2 border ${state?.errors?.countryOfResidence ? "border-red-500" : ""}`}
+              >
+              <option value="">Select your country</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Canada">Canada</option>
+              <option value="United States of America">United States of America</option>
+              <option value="England">England</option>
+              <option value="France">France</option>
+              </select>
+              {state?.errors?.countryOfResidence && (
+              <div className="flex items-center space-x-1 text-sm text-red-500">
+                <AlertCircle className="h-4 w-4" />
+                <p>{state.errors.countryOfResidence}</p>
+              </div>
               )}
             </div>
 
