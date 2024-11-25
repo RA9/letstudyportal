@@ -8,6 +8,16 @@ import { Input } from "@/components/ui/input"
 import { ChartContainer, ChartTooltip } from "@/components/ui/chart"
 import { EventCalendar } from './CalendarOfEvents'
 import Activities from './Activities'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/modal"
+import Link from 'next/link'
 
 const activityData = [
   { month: "Sep", applications: 2, interviews: 1 },
@@ -23,9 +33,21 @@ const progressData = [
   { day: "Fri", tasks: 5 },
 ]
 
-export function DashboardPageComponent() {
+export function DashboardPageComponent(props: { userInfo: any }) {
+  // get user data
+  const { userInfo } = props
+
+  console.log('User', userInfo)
   return (
     <>
+
+      {
+        !userInfo?.isVerified && (
+          verifyNotification()
+        )
+      }
+
+
       <div className="mb-8 flex items-center justify-between">
         <div className="relative w-96">
           <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-500" />
@@ -44,7 +66,7 @@ export function DashboardPageComponent() {
 
       <Card className="mb-8">
         <CardContent className="p-6">
-          <h1 className="text-2xl font-bold">Welcome back, Samuel Monday!</h1>
+          <h1 className="text-2xl font-bold">Welcome back, {userInfo?.firstName}!</h1>
           <p className="text-gray-500">Studying a day makes you smarter.</p>
         </CardContent>
       </Card>
@@ -189,5 +211,29 @@ export function DashboardPageComponent() {
       <Activities />
     </>
 
+  )
+}
+
+
+export function verifyNotification() {
+  return (
+    <Dialog open>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle className='text-red-500'>
+            Verify your account
+          </DialogTitle>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          In order to continue using Let's Study Portal, please verify your account. By verifying your account, you will be able to access all the features of the platform.
+          Click the button below to verify your account.
+        </div>
+        <DialogFooter>
+            <Link href={"/complete-kyc"}>
+            <Button className="bg-primary text-white rounded-lg">Verify Account</Button>
+            </Link>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   )
 }
