@@ -7,7 +7,7 @@ import { Upload } from "lucide-react";
 
 const KycForm = () => {
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-white">
+    <Card className="w-full max-w-5xl mx-auto bg-white my-4 p-4">
       <CardHeader className="space-y-1">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
