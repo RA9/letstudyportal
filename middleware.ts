@@ -32,7 +32,6 @@ export default async function middleware(req: NextRequest) {
         session?.userId &&
         !req.nextUrl.pathname.startsWith('/dashboard')
     ) {
-        console.log("I am here")
         return NextResponse.redirect(new URL('/dashboard', req.nextUrl))
     }
 
