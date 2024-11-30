@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "../globals.css";
 
 import { Sidebar } from "@/components/Sidebar";
+import { AdminSidebar } from "@/components/AdminSidebar";
+import { getUser } from '@/app/lib/dal';
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -16,11 +18,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export default function Layout({
+export default async function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const user = await getUser()
+
   return (
     <html lang="en">
       <body
@@ -28,7 +33,9 @@ export default function Layout({
       >
         <div className="flex min-h-screen bg-gray-50/50">
           {/* Sidebar */}
-          <Sidebar />
+          {
+            user.role.toLowerCase() === "applicant" ? <Sidebar /> : <AdminSidebar />
+          }
           {/* Main Content */}
           <main className="flex-1 p-4">
             {children}
