@@ -9,5 +9,9 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const user = await getUser()
-  return <NewSchoolForm />
+  return (
+    <div className="container mx-auto py-10 px-4 bg-white rounded-lg shadow-md">
+      <NewSchoolForm />
+    </div>
+  )
 }

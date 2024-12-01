@@ -12,7 +12,7 @@ export default function SchoolsPage() {
   return (
     <div className="container mx-auto py-10 px-4 bg-white">
         <div className="flex items-center justify-between mb-5">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
+        <h1 className="text-2xl font-bold">Schools Directory</h1>
         <div className="flex items-center gap-2">
             <Link href="/manage-schools/create">
                 <Button variant="default">Add School</Button>
