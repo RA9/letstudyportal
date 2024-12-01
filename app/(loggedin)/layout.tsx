@@ -5,6 +5,7 @@ import "../globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import { AdminSidebar } from "@/components/AdminSidebar";
 import { getUser } from '@/app/lib/dal';
+import { Toaster } from "@/components/ui/toaster"
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -39,6 +40,7 @@ export default async function Layout({
           {/* Main Content */}
           <main className="flex-1 p-4">
             {children}
+            <Toaster />
           </main>
         </div>
       </body>
