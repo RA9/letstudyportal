@@ -45,8 +45,6 @@ export async function register(prevState: any, formData: FormData) {
       }
     }
 
-    console.log({result})
-
     await createSession(result.token)
 
     redirect('/dashboard')

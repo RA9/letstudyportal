@@ -31,13 +31,18 @@ type User = {
   createdAt: string
 }
 
-const users: User[] = [
-  { id: "1", name: "John Doe", email: "john@example.com", role: "Admin", createdAt: "2023-01-01" },
-  { id: "2", name: "Jane Smith", email: "jane@example.com", role: "User", createdAt: "2023-01-02" },
-  // Add more mock data as needed
-]
+function formatDate(date: string){
+    return new Date(date).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        weekday: "short",
+        year: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+    })
+}
 
-export function UserList() {
+export function UserList({ users }: { users: User[] }) {
   const [searchTerm, setSearchTerm] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 10
@@ -68,7 +73,7 @@ export function UserList() {
             className="max-w-sm"
           />
         </div>
-        <Link href="/users/new">
+        <Link href="/manage-users/new">
           <Button>Add New User</Button>
         </Link>
       </div>
@@ -89,9 +94,9 @@ export function UserList() {
                 <TableCell className="font-medium">{user.name}</TableCell>
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.role}</TableCell>
-                <TableCell>{user.createdAt}</TableCell>
+                <TableCell>{formatDate(user.createdAt)}</TableCell>
                 <TableCell>
-                  <Link href={`/users/${user.id}`}>
+                  <Link href={`/manage-users/${user.id}`}>
                     <Button variant="outline" size="sm">View</Button>
                   </Link>
                 </TableCell>
