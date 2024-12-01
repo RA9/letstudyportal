@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { getSchoolById } from "@/app/actions"
+// import { getSchoolById } from "@/app/actions"
 import { AboutTab } from "@/components/school-details/about-tab"
 import { AdmissionTab } from "@/components/school-details/admission-tab"
 import { ProgramsTab } from "@/components/school-details/programs-tab"
