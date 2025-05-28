@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   BookOpen,
   Calendar,
@@ -15,6 +15,7 @@ import {
   Search,
   Settings,
 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const Sidebar = () => {
   const router = useRouter();
@@ -79,6 +80,35 @@ export const Sidebar = () => {
             Support Chat
           </Button>
         </nav>
+
+        <div className="space-y-4">
+          <Card>
+            <CardContent className="p-4 text-center">
+              <p className="text-sm">Need help?</p>
+              <p className="text-xs text-gray-500 mb-2">
+                You can contact our support team for assistance.
+              </p>
+              <Button
+                variant="default"
+                className="w-full text-white bg-blue-700 hover:bg-blue-800"
+              >
+                Contact Support
+              </Button>
+            </CardContent>
+          </Card>
+          <div className="flex items-center gap-2">
+            <Avatar className="h-8 w-8">
+              <AvatarImage src="" />
+              <AvatarFallback>YC</AvatarFallback>
+            </Avatar>
+            <div>
+              <p className="text-sm font-medium">Yemi Carlos</p>
+              <p className="text-xs text-gray-500">
+                emmanuelsmith345@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
 
         <Button variant="ghost" className="justify-start  hover:bg-blue-600">
           <LogOut className="mr-2 h-4 w-4" />
