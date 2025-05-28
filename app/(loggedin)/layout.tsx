@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import localFont from "next/font/local";
 import "../globals.css";
 
 import { Sidebar } from "@/components/Sidebar";
 import { AdminSidebar } from "@/components/AdminSidebar";
-import { getUser } from '@/app/lib/dal';
-import { Toaster } from "@/components/ui/toaster"
+import { getUser } from "@/app/lib/dal";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -24,19 +24,20 @@ export default async function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  const user = await getUser()
+  const user = await getUser();
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex min-h-screen bg-gray-50/50">
+        <div className="flex min-h-screen bg-[#E9EEF7]">
           {/* Sidebar */}
-          {
-            user.role.toLowerCase() === "applicant" ? <Sidebar /> : <AdminSidebar />
-          }
+          {user.role.toLowerCase() === "applicant" ? (
+            <Sidebar />
+          ) : (
+            <AdminSidebar />
+          )}
           {/* Main Content */}
           <main className="flex-1 p-4">
             {children}
@@ -45,5 +46,5 @@ export default async function Layout({
         </div>
       </body>
     </html>
-  )
+  );
 }
