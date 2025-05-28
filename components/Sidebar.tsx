@@ -82,7 +82,7 @@ export const Sidebar = () => {
         </nav>
 
         <div className="space-y-4">
-          <Card>
+          <Card className="bg-[#eef4ff]">
             <CardContent className="p-4 text-center">
               <p className="text-sm">Need help?</p>
               <p className="text-xs text-gray-500 mb-2">
@@ -90,7 +90,7 @@ export const Sidebar = () => {
               </p>
               <Button
                 variant="default"
-                className="w-full text-white bg-blue-700 hover:bg-blue-800"
+                className="w-full text-white bg-gradient-to-r from-blue-500 to-blue-800 hover:from-blue-600 hover:to-blue-900"
               >
                 Contact Support
               </Button>
