@@ -14,6 +14,7 @@ const SchoolExplorer = () => {
       rating: 4.5,
       category: "AI RECOMMENDATION",
       isRecommended: true,
+      applyUrl: "/explore-schools/anderson-university",
     },
     {
       id: 2,
@@ -22,6 +23,7 @@ const SchoolExplorer = () => {
       rating: 4.2,
       category: "AI RECOMMENDATION",
       isRecommended: true,
+      applyUrl: "/explore-schools/anderson-university",
     },
     {
       id: 3,
@@ -30,6 +32,7 @@ const SchoolExplorer = () => {
       rating: 4.8,
       category: "AI RECOMMENDATION",
       isRecommended: true,
+      applyUrl: "/explore-schools/anderson-university",
     },
     {
       id: 4,
@@ -38,6 +41,7 @@ const SchoolExplorer = () => {
       rating: 4.3,
       category: "PARTNERED SCHOOLS",
       isRecommended: false,
+      applyUrl: "/explore-schools/anderson-university",
     },
     {
       id: 5,
@@ -46,6 +50,7 @@ const SchoolExplorer = () => {
       rating: 4.6,
       category: "PARTNERED SCHOOLS",
       isRecommended: false,
+      applyUrl: "/explore-schools/anderson-university",
     },
     {
       id: 6,
@@ -54,6 +59,7 @@ const SchoolExplorer = () => {
       rating: 4.4,
       category: "PARTNERED SCHOOLS",
       isRecommended: false,
+      applyUrl: "/explore-schools/anderson-university",
     },
   ];
 
@@ -89,9 +95,12 @@ const SchoolExplorer = () => {
           </div>
         </div>
 
-        <button className="w-full mt-3 px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition-colors">
+        <a
+          href={school.applyUrl}
+          className="w-full mt-3 px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition-colors"
+        >
           Apply to School
-        </button>
+        </a>
       </div>
     </div>
   );
