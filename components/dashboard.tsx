@@ -92,11 +92,9 @@ export function DashboardPageComponent(props: { userInfo: any }) {
   console.log("User", userInfo);
   return (
     <>
-      {/* {
-      (!userInfo?.isVerified && userInfo?.role.toLowerCase() !== 'admin')  && (
-        verifyNotification()
-      )
-      } */}
+      {/* {!userInfo?.isVerified &&
+        userInfo?.role.toLowerCase() !== "admin" &&
+        verifyNotification()} */}
 
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
