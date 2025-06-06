@@ -1,9 +1,10 @@
 "use client";
 
-import { Header } from "./landing/Header";
 import { BackgroundPattern } from "./landing/BackgroundPattern";
 import { HeroSection } from "./landing/HeroSection";
 import { FeatureSection } from "./landing/FeatureSection";
+import PopularSchoolsSection from "./landing/PopularSchoolSection";
+import TestimonialsAndNewsletter from "./landing/TestimonialsAndNewsletter";
 
 export function LandingPageComponent() {
   return (
@@ -14,6 +15,8 @@ export function LandingPageComponent() {
       {/* Main Content */}
       <HeroSection />
       <FeatureSection />
+      <PopularSchoolsSection />
+      <TestimonialsAndNewsletter />
     </div>
   );
 }
