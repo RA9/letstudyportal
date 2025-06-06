@@ -11,7 +11,7 @@ const PopularSchoolsSection = () => {
     {
       id: 1,
       name: "University of Brighton",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       description:
         "University of Brighton offers students outstanding opportunities to study what really matters to them in beautiful campuses.",
       tags: ["Learn More", "Explore School Website"],
@@ -19,7 +19,7 @@ const PopularSchoolsSection = () => {
     {
       id: 2,
       name: "University of Cambridge",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       description:
         "University of Cambridge offers students outstanding opportunities to study what really matters to them in beautiful campuses.",
       tags: ["Learn More", "Explore School Website"],
@@ -27,7 +27,7 @@ const PopularSchoolsSection = () => {
     {
       id: 3,
       name: "University of Oxford",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       description:
         "University of Oxford offers students outstanding opportunities to study what really matters to them in beautiful campuses.",
       tags: ["Learn More", "Explore School Website"],
@@ -93,9 +93,9 @@ const PopularSchoolsSection = () => {
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Left side - Illustration */}
         <div className="relative">
-          <div className="bg-pink-100 rounded-2xl p-8 aspect-square flex items-center justify-center">
+          <div className="rounded-lg p-8 aspect-square flex items-center justify-center">
             <img
-              src="/api/placeholder/400/300"
+              src="/3.png"
               alt="Students studying"
               className="w-full h-full object-cover rounded-lg"
             />
