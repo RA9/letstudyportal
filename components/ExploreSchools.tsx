@@ -10,7 +10,7 @@ const SchoolExplorer = () => {
     {
       id: 1,
       name: "Anderson University",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       rating: 4.5,
       category: "AI RECOMMENDATION",
       isRecommended: true,
@@ -19,7 +19,7 @@ const SchoolExplorer = () => {
     {
       id: 2,
       name: "Anderson University",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       rating: 4.2,
       category: "AI RECOMMENDATION",
       isRecommended: true,
@@ -28,7 +28,7 @@ const SchoolExplorer = () => {
     {
       id: 3,
       name: "Anderson University",
-      image: "/api/placeholder/300/200",
+      image: "/ss.png",
       rating: 4.8,
       category: "AI RECOMMENDATION",
       isRecommended: true,
@@ -37,7 +37,7 @@ const SchoolExplorer = () => {
     {
       id: 4,
       name: "Anderson University",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       rating: 4.3,
       category: "PARTNERED SCHOOLS",
       isRecommended: false,
@@ -46,7 +46,7 @@ const SchoolExplorer = () => {
     {
       id: 5,
       name: "Anderson University",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       rating: 4.6,
       category: "PARTNERED SCHOOLS",
       isRecommended: false,
@@ -55,7 +55,7 @@ const SchoolExplorer = () => {
     {
       id: 6,
       name: "Anderson University",
-      image: "/api/placeholder/300/200",
+      image: "/sch-1.jpg",
       rating: 4.4,
       category: "PARTNERED SCHOOLS",
       isRecommended: false,
