@@ -39,7 +39,7 @@ export default async function Layout({
             <AdminSidebar />
           )}
           {/* Main Content */}
-          <main className="flex-1 p-4">
+          <main className="flex-1 lg:p-4 p-4 pt-16 lg:pt-4">
             {children}
             <Toaster />
           </main>
